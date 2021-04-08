@@ -2,7 +2,7 @@
     pageEncoding="EUC-KR"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
-<c:set var="n" scope="request" value="10"/>
+<c:import url="https://www.naver.com" var="urlValue" scope="request"/>
 <!DOCTYPE html>
 <html>
 <head>
@@ -10,11 +10,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-<c:if test="${n == 0 }">
-	n과 0은 같습니다.
-</c:if>
-<c:if test="${n == 10 }">
-	n과 10은 같습니다.
-</c:if>
+${urlValue }
 </body>
 </html>

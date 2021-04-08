@@ -1,8 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
     pageEncoding="EUC-KR"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-
-<c:set var="n" scope="request" value="10"/>
 <!DOCTYPE html>
 <html>
 <head>
@@ -10,11 +8,8 @@
 <title>Insert title here</title>
 </head>
 <body>
-<c:if test="${n == 0 }">
-	n과 0은 같습니다.
-</c:if>
-<c:if test="${n == 10 }">
-	n과 10은 같습니다.
-</c:if>
+<c:set var="t" value="<script type='text/javascript'>alert(1);</script>"/>
+<c:out value="${t }" escapeXml="true"/> <!-- 문자로 변환 -->
+<c:out value="${t }" escapeXml="false"/>
 </body>
 </html>
