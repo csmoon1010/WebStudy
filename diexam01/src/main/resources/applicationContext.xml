@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+	<bean id = "userBean" class = "kr.or.connect.diexam01.UserBean"></bean>
+	<!-- kr.or.connect.diexam01.UserBean userBean = new kr.or.connect.diexam01.UserBean -->
+	<!-- 싱클턴 패턴으로 가지고 있음!! -->
+	<bean id = "e" class = "kr.or.connect.diexam01.Engine"/>
+	<bean id = "c" class = "kr.or.connect.diexam01.Car">
+		<property name="engine" ref="e"></property>
+		<!-- setter, getter 중 하나 -> setEngine, getEngine 빈태그 내에서는 값을 설정하는 것이므로 setEngine()일 것-->
+		<!-- ref : 파라미터로 생성된 빈객체 e를 전달할 것! -->
+	</bean>
+</beans>
